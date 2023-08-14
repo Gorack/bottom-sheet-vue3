@@ -230,6 +230,7 @@ export const Sheet = defineComponent({
   },
   emits: {
     'update:visible': null! as (visible: boolean) => void,
+    'opened': null! as () => void,
   },
   setup(props, { attrs, slots, emit }) {
     const context = useBottomSheet()
@@ -277,7 +278,10 @@ export const Sheet = defineComponent({
         },
       )
 
-      anim.onfinish = done
+      anim.onfinish = () => {
+        done()
+        emit('opened')
+      }
     }
 
     function handleAnimationLeave(backdrop: Element, done: () => void) {
