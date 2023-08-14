@@ -4,6 +4,10 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
+  "author": {
+    "email": "szabolcs.pinter.94@gmail.com",
+    "name": "Szabolcs Pintér"
+  },
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
